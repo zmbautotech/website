@@ -18,6 +18,14 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://zmbautotech.com/">
 
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="business.business">
     <meta property="og:title" content="ZMB (M) SDN BHD - Professional Automotive Solutions">
@@ -70,16 +78,30 @@
     </script>
 
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J53WC4YHVV"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MZMK03C0LG"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-J53WC4YHVV');
+      gtag('config', 'G-MZMK03C0LG');
     </script>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS
+    <script src="https://cdn.tailwindcss.com"></script> -->
+    <!-- Tailwind CSS - FIXED -->
+    <script>
+        tailwind = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Plus Jakarta Sans', 'sans-serif'],
+                        'heading': ['Sora', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
     
     <!-- Google Fonts - Distinctive Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
