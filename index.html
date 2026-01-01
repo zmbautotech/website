@@ -347,8 +347,20 @@
 
     <main>
     <!-- Hero Section -->
-    <section id="home" class="hero-gradient text-white py-20 sm:py-32 fetchpriority=high">
-        <div class="container mx-auto px-4 sm:px-6 text-center">
+    <section id="home" class="relative text-white py-20 sm:py-32 overflow-hidden">
+        <!-- Background Image with High Priority -->
+        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=2000&auto=format&fit=crop" 
+             alt="Professional automotive workshop background"
+             class="absolute inset-0 w-full h-full object-cover -z-10"
+             width="2000"
+             height="1333"
+             fetchpriority="high">
+        
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/95 to-slate-900/98 -z-10"></div>
+        
+        <!-- Hero Content -->
+        <div class="container mx-auto px-4 sm:px-6 text-center relative z-10">
             <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in-up">
                 Professional Automotive Solutions<br>
                 <span class="text-orange-400">for Continental & Local Vehicles</span>
