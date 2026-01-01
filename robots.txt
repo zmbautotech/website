@@ -1,0 +1,25 @@
+# robots.txt for zmbautotech.com
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow crawling of any future admin or private folders (if you add them)
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://zmbautotech.com/sitemap.xml
+
+# Allow AI crawlers (Claude, GPT, etc.)
+User-agent: GPTBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
