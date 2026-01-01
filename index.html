@@ -91,9 +91,12 @@
     <link rel="preconnect" href="https://www.google-analytics.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind={theme:{extend:{fontFamily:{'sans':['Plus Jakarta Sans','sans-serif'],'heading':['Sora','sans-serif']}}}}</script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
     
     <!-- Google Fonts - Distinctive Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -101,7 +104,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+      crossorigin="anonymous" 
+      onerror="this.onerror=null;this.href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css';" />
 
     <style>
         :root {
@@ -280,7 +286,8 @@
                     src="https://raw.githubusercontent.com/amalisme/zmbautotech/main/images/Logo.jpg"
                     alt="ZMB Autotech Logo" 
                     class="h-10 sm:h-12 w-auto mr-3"
-                    loading="lazy">
+                    loading="lazy"
+                    onerror="this.style.display='none'">
                 <div>
                     <h1 class="text-lg sm:text-xl font-bold text-slate-900 leading-tight">ZMB (M) SDN BHD</h1>
                     <p class="text-xs text-slate-500 tracking-wide">AUTOTECH SPECIALISTS</p>
@@ -366,7 +373,8 @@
                     <img src="https://raw.githubusercontent.com/zmbautotech/website/main/images/zmb-about-us.jpeg" 
                          alt="Professional automotive workshop" 
                          class="rounded-lg shadow-xl"
-                         loading="lazy">
+                         loading="lazy"
+                         onerror="this.style.display='none'">
                 </div>
                 <div>
                     <h4 class="text-2xl font-bold text-slate-900 mb-4">Our Journey</h4>
@@ -877,7 +885,8 @@
                     <img src="https://raw.githubusercontent.com/zmbautotech/website/main/images/01_zmb_exterior.png" 
                          alt="ZMB Autotech Professional Entrance - Seremban" 
                          class="w-full h-64 object-cover hover:scale-110 transition duration-500"
-                         loading="lazy">
+                         loading="lazy"
+                         onerror="this.style.display='none'">
                     <div class="bg-slate-50 p-3 text-center">
                         <p class="text-sm font-semibold text-slate-700">Our Entrance</p>
                     </div>
@@ -888,7 +897,8 @@
                     <img src="https://raw.githubusercontent.com/zmbautotech/website/main/images/02_zmb_building.png" 
                          alt="ZMB Autotech - European Car Specialist VOLVO" 
                          class="w-full h-64 object-cover hover:scale-110 transition duration-500"
-                         loading="lazy">
+                         loading="lazy"
+                         onerror="this.style.display='none'">
                     <div class="bg-slate-50 p-3 text-center">
                         <p class="text-sm font-semibold text-slate-700">European Specialist</p>
                     </div>
@@ -899,7 +909,8 @@
                     <img src="https://raw.githubusercontent.com/zmbautotech/website/main/images/03_customer_lounge.png" 
                          alt="Modern Customer Waiting Lounge - Comfortable & Air-Conditioned" 
                          class="w-full h-64 object-cover hover:scale-110 transition duration-500"
-                         loading="lazy">
+                         loading="lazy"
+                         onerror="this.style.display='none'">
                     <div class="bg-slate-50 p-3 text-center">
                         <p class="text-sm font-semibold text-slate-700">Customer Lounge</p>
                     </div>
@@ -910,7 +921,8 @@
                     <img src="https://raw.githubusercontent.com/zmbautotech/website/main/images/04_lounge_seating.png" 
                          alt="Comfortable Waiting Area with TV & Refreshments" 
                          class="w-full h-64 object-cover hover:scale-110 transition duration-500"
-                         loading="lazy">
+                         loading="lazy"
+                         onerror="this.style.display='none'">
                     <div class="bg-slate-50 p-3 text-center">
                         <p class="text-sm font-semibold text-slate-700">Comfortable Seating</p>
                     </div>
@@ -921,7 +933,8 @@
                     <img src="https://raw.githubusercontent.com/zmbautotech/website/main/images/05_workshop_capacity.png" 
                          alt="10 Service Bays - Professional Workshop Facility" 
                          class="w-full h-64 object-cover hover:scale-110 transition duration-500"
-                         loading="lazy">
+                         loading="lazy"
+                         onerror="this.style.display='none'">
                     <div class="bg-slate-50 p-3 text-center">
                         <p class="text-sm font-semibold text-slate-700">Workshop Capacity</p>
                     </div>
@@ -932,7 +945,8 @@
                     <img src="https://raw.githubusercontent.com/zmbautotech/website/main/images/06_workshop_active.png" 
                          alt="Busy Workshop - Trusted by Many Customers" 
                          class="w-full h-64 object-cover hover:scale-110 transition duration-500"
-                         loading="lazy">
+                         loading="lazy"
+                         onerror="this.style.display='none'">
                     <div class="bg-slate-50 p-3 text-center">
                         <p class="text-sm font-semibold text-slate-700">Active Service Bays</p>
                     </div>
@@ -943,7 +957,8 @@
                     <img src="https://raw.githubusercontent.com/zmbautotech/website/main/images/07_lift_equipment.png" 
                          alt="Professional Car Lifts & Equipment" 
                          class="w-full h-64 object-cover hover:scale-110 transition duration-500"
-                         loading="lazy">
+                         loading="lazy"
+                         onerror="this.style.display='none'">
                     <div class="bg-slate-50 p-3 text-center">
                         <p class="text-sm font-semibold text-slate-700">Professional Equipment</p>
                     </div>
@@ -954,7 +969,8 @@
                     <img src="https://raw.githubusercontent.com/zmbautotech/website/main/images/08_prayer_room.png" 
                          alt="Prayer Room Facility - Cultural Respect & Comfort" 
                          class="w-full h-64 object-cover hover:scale-110 transition duration-500"
-                         loading="lazy">
+                         loading="lazy"
+                         onerror="this.style.display='none'">
                     <div class="bg-slate-50 p-3 text-center">
                         <p class="text-sm font-semibold text-slate-700">Prayer Room</p>
                     </div>
