@@ -1548,5 +1548,180 @@
         });
     </script>
 
+    <!-- Event Tracking for GA4 -->
+    <script>
+      // Wait for DOM to be fully loaded
+      document.addEventListener('DOMContentLoaded', function() {
+        
+        // Track Phone Number Clicks
+        const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+        phoneLinks.forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            const phoneNumber = this.getAttribute('href').replace('tel:', '');
+            gtag('event', 'phone_click', {
+              'event_category': 'contact',
+              'event_label': phoneNumber,
+              'value': phoneNumber
+            });
+            console.log('Phone click tracked:', phoneNumber);
+          });
+        });
+    
+        // Track Email Clicks
+        const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+        emailLinks.forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            const email = this.getAttribute('href').replace('mailto:', '');
+            gtag('event', 'email_click', {
+              'event_category': 'contact',
+              'event_label': email,
+              'value': email
+            });
+            console.log('Email click tracked:', email);
+          });
+        });
+    
+        // Track WhatsApp Clicks
+        const whatsappLinks = document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"]');
+        whatsappLinks.forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            const whatsappURL = this.getAttribute('href');
+            gtag('event', 'whatsapp_click', {
+              'event_category': 'contact',
+              'event_label': 'WhatsApp Chat',
+              'value': whatsappURL
+            });
+            console.log('WhatsApp click tracked');
+          });
+        });
+    
+        // Track Google Maps Clicks
+        const mapsLinks = document.querySelectorAll('a[href*="maps.google.com"], a[href*="maps.app.goo.gl"]');
+        mapsLinks.forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            const mapsURL = this.getAttribute('href');
+            gtag('event', 'maps_click', {
+              'event_category': 'navigation',
+              'event_label': 'Google Maps',
+              'value': mapsURL
+            });
+            console.log('Google Maps click tracked');
+          });
+        });
+    
+        // Track Waze Clicks
+        const wazeLinks = document.querySelectorAll('a[href*="waze.com"]');
+        wazeLinks.forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            const wazeURL = this.getAttribute('href');
+            gtag('event', 'waze_click', {
+              'event_category': 'navigation',
+              'event_label': 'Waze',
+              'value': wazeURL
+            });
+            console.log('Waze click tracked');
+          });
+        });
+    
+        // Track Contact Form Submissions
+        const contactForms = document.querySelectorAll('form');
+        contactForms.forEach(function(form) {
+          form.addEventListener('submit', function(e) {
+            // Get form data if needed
+            const formData = new FormData(form);
+            const formType = form.getAttribute('id') || 'contact_form';
+            
+            gtag('event', 'form_submit', {
+              'event_category': 'lead_generation',
+              'event_label': formType,
+              'value': 1
+            });
+            console.log('Form submission tracked:', formType);
+          });
+        });
+    
+        // Track FAQ Accordion Clicks (if you have FAQ section)
+        const faqItems = document.querySelectorAll('.faq-item, .accordion-item, [class*="faq"]');
+        faqItems.forEach(function(item) {
+          item.addEventListener('click', function(e) {
+            const question = this.querySelector('h3, h4, .question, [class*="question"]');
+            const questionText = question ? question.textContent.trim().substring(0, 50) : 'FAQ Item';
+            
+            gtag('event', 'faq_interaction', {
+              'event_category': 'engagement',
+              'event_label': questionText,
+              'value': 1
+            });
+            console.log('FAQ clicked:', questionText);
+          });
+        });
+    
+        // Track Social Media Clicks (if you add social icons)
+        const socialLinks = document.querySelectorAll('a[href*="facebook.com"], a[href*="instagram.com"], a[href*="tiktok.com"], a[href*="youtube.com"]');
+        socialLinks.forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            const url = this.getAttribute('href');
+            let platform = 'Unknown';
+            
+            if (url.includes('facebook.com')) platform = 'Facebook';
+            else if (url.includes('instagram.com')) platform = 'Instagram';
+            else if (url.includes('tiktok.com')) platform = 'TikTok';
+            else if (url.includes('youtube.com')) platform = 'YouTube';
+            
+            gtag('event', 'social_click', {
+              'event_category': 'social_media',
+              'event_label': platform,
+              'value': url
+            });
+            console.log('Social media click tracked:', platform);
+          });
+        });
+    
+        // Track Scroll Depth (measures engagement)
+        let scrollTracked = {
+          '25': false,
+          '50': false,
+          '75': false,
+          '100': false
+        };
+    
+        window.addEventListener('scroll', function() {
+          const scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+          
+          if (scrollPercent >= 25 && !scrollTracked['25']) {
+            scrollTracked['25'] = true;
+            gtag('event', 'scroll_depth', {
+              'event_category': 'engagement',
+              'event_label': '25%',
+              'value': 25
+            });
+          } else if (scrollPercent >= 50 && !scrollTracked['50']) {
+            scrollTracked['50'] = true;
+            gtag('event', 'scroll_depth', {
+              'event_category': 'engagement',
+              'event_label': '50%',
+              'value': 50
+            });
+          } else if (scrollPercent >= 75 && !scrollTracked['75']) {
+            scrollTracked['75'] = true;
+            gtag('event', 'scroll_depth', {
+              'event_category': 'engagement',
+              'event_label': '75%',
+              'value': 75
+            });
+          } else if (scrollPercent >= 95 && !scrollTracked['100']) {
+            scrollTracked['100'] = true;
+            gtag('event', 'scroll_depth', {
+              'event_category': 'engagement',
+              'event_label': '100%',
+              'value': 100
+            });
+          }
+        });
+    
+        console.log('GA4 Event Tracking initialized successfully');
+      });
+    </script>
+
 </body>
 </html>
